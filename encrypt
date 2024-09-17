@@ -15,4 +15,14 @@ for i in digits:
         newi = keys[key%10]
         encrypted.append(newi)
         newi = 0
-print(encrypted)
+for i in encrypted: print(i, end="")
+key2 = int(input("\nEnter the encryption key: "))
+for i in encrypted:
+    if i in keys:
+        for j in range(keys.index(i)):
+            keys.append(keys[0])
+            keys.remove(keys[0])
+        newi = keys[-1*key2%10]
+        decrypted.append(newi)
+        newi = 0
+for i in decrypted: print(i, end="")
